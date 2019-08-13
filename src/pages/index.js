@@ -1,21 +1,34 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
-
+import StoryForm from "../components/StoryForm"
+import { StaticQuery, graphql } from "gatsby"
+import StoryCard from "../components/storyCard"
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <StaticQuery
+    query={graphql`
+      query MyQuery {
+        allStoriesJson {
+          edges {
+            node {
+              id
+              content
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Layout>
+        <SEO title="Home" />
+        <StoryForm />
+        {data.allStoriesJson.edges.map(story => (
+          <StoryCard story={story.node}></StoryCard>
+        ))}
+      </Layout>
+    )}
+  />
 )
 
 export default IndexPage
