@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 html {
   font-family: roboto;
   font-size: 62.5%;
@@ -11,6 +14,7 @@ body {
 
 p {
   font-size: 1.6rem;
+  line-height: 2.8rem;
 }
 a {
   background-color: transparent;
@@ -22,6 +26,10 @@ a:hover {
 h1 {
   font-size: 4.2em;
   margin: 0.67em 0;
+}
+
+span.strike {
+  text-decoration: line-through wavy #ff8686;
 }
 
 small {
@@ -44,34 +52,63 @@ textarea {
   width: 100%;
   border-radius: 5px;
   resize: none;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 6px #bbbbbb;
-  border: none;
+  margin: 1rem 0;
+  border: 2px solid #bbbbbb;
+  font-size: 2rem;
+  padding: 2rem;
 }
 
 label {
   font-size: 1.6rem;
-  margin-bottom: 0.5rem;
 }
 
 button {
-  font-size: 1.6rem;
-  padding: 1rem 2rem;
+  font-size: 2rem;
+  padding: 2rem 2rem;
   border-radius: 5px;
-  background-color: white;
+  background-color: #ff8686;
+  color: white;
+  width: 100%;
+  font-weight: bold;
+  border-bottom: 0.5rem solid #de5254;
+  transition: transform 100ms;
 }
 
 button:hover {
   cursor: pointer;
-  background-color: white;
+  transform: translateY(-1px);
+  border-bottom: 0.51rem solid #de5254;
 }
 
 /* CARD STUFF */
 .card {
   box-shadow: 0 4px 6px #bbbbbb;
-  padding: 2.5rem 2rem;
+  padding: 3rem 4rem;
   border-radius: 5px;
   margin: 2rem 0;
   background-color: white;
   margin-bottom: 2rem;
+}
+
+/* HEADER STUFF */
+header {
+  background-color: #3690cf;
+  color: white;
+  padding: 10rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.header-title {
+  font-size: 7.2rem;
+  margin-bottom: 0;
+}
+
+.header-subtitle {
+  font-size: 3.2rem;
+  font-weight: 300;
 }

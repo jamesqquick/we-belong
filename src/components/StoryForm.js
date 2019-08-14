@@ -11,18 +11,20 @@ export default class StoryForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.submitStory}>
-        <label htmlFor="story">Your story</label>
-        <textarea
-          name="story"
-          id="story"
-          cols="30"
-          rows="10"
-          onChange={this.onInputChange}
-          value={this.state.story}
-        ></textarea>
-        <button type="submit">Share!</button>
-      </form>
+      <div className="card">
+        <form onSubmit={this.submitStory}>
+          <label htmlFor="story">Your story</label>
+          <textarea
+            name="story"
+            id="story"
+            rows="5"
+            onChange={this.onInputChange}
+            value={this.state.story}
+            placeholder="Share you imposter syndrome story to help others feel at ease!"
+          ></textarea>
+          <button type="submit">HELP OTHERS!</button>
+        </form>
+      </div>
     )
   }
 
