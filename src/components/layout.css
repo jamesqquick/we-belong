@@ -47,6 +47,8 @@ img {
 }
 
 /* FORM STUFF */
+#storyForm {
+}
 input,
 textarea {
   width: 100%;
@@ -70,14 +72,14 @@ button {
   color: white;
   width: 100%;
   font-weight: bold;
-  border-bottom: 0.5rem solid #de5254;
-  transition: transform 100ms;
+  box-shadow: 0px 5px 1px #de5254;
+  transition: box-shadow 50ms;
+  border: none;
 }
 
 button:hover {
   cursor: pointer;
-  transform: translateY(-1px);
-  border-bottom: 0.51rem solid #de5254;
+  box-shadow: 0px 7px 1px #de5254;
 }
 
 /* CARD STUFF */
@@ -95,6 +97,7 @@ header {
   background-color: #3690cf;
   color: white;
   padding: 10rem 2rem;
+  padding-bottom: 15rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -11,7 +11,7 @@ export default class StoryForm extends Component {
 
   render() {
     return (
-      <div className="card">
+      <div className="card" id="storyForm">
         <form onSubmit={this.submitStory}>
           <label htmlFor="story">Your story</label>
           <textarea
